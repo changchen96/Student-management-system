@@ -44,7 +44,14 @@ void manageStudent::clearStudentList()
 void manageStudent::removeStudent(int studentNumber)
 {
 	studentListIterator = studentList.find(studentNumber);
-	studentList.erase(studentListIterator);
-	cout << "Student has been deleted!" << endl;
+	if (studentListIterator != studentList.end()) 
+	{
+		studentList.erase(studentListIterator);
+		cout << "Student has been deleted!" << endl;
+	}
+	else
+	{
+		cout << "Student not found! Returning to main menu!" << endl;
+	}
 }
 #endif
